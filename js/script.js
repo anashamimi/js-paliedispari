@@ -11,6 +11,8 @@ Dichiariamo chi ha vinto.
 */
 
 
+//Esercizio Palindromo
+
 const wordBox = document.getElementById('word');
 const btnSend = document.querySelector('button');
 
@@ -36,14 +38,60 @@ function palindromo() {
         console.log("La stringa non contiene degli spazi");
     }
 
-    //condizione che verifica se parola/frase è palidroma
+    //condizione che verifica se parola/frase è palindroma
     if (word === reverseWord) {
-        message = `${wordBox.value} è una ${input} palidroma`;
+        message = `${wordBox.value} è una ${input} palindroma`;
         console.log(true);
+        document.getElementById('result').innerHTML = `<h1 class="text-success">${message}</h1>`;
     } else {
-        message = `${wordBox.value} non è una ${input} palidroma`;
+        message = `${wordBox.value} non è una ${input} palindroma`;
         console.log(false);
+        document.getElementById('result').innerHTML = `<h1 class="text-danger">${message}</h1>`;
     }
 
     console.log(message)
+}
+
+
+
+
+// Esercizio Pari e Dispari
+
+const selectPariDispari = document.getElementById('pari-dispari');
+const selectNum = document.getElementById('num');
+
+const btnPariDispari = document.getElementById('btn-pari-dispari');
+
+btnPariDispari.addEventListener('click', pariDispari);
+
+function pariDispari() {
+
+    const pariDispariValue = selectPariDispari.value;
+    const userNum = parseInt(selectNum.value);
+    const computerNum = getRndNumber(1, 5);
+    const sum = userNum + computerNum;
+    let risultato = '';
+    let message = '';
+
+    if (sum % 2) {
+        risultato = 'dispari';
+        console.log('è dispari');
+    } else{
+        risultato = 'pari';
+        console.log('è pari');
+    }
+
+    if (risultato === pariDispariValue) {
+        message = `Hai vinto!!! Il risultato è ${risultato} :)`;
+        document.getElementById('message').innerHTML = `<h1 class="text-success">${message}</h1>`;
+    } else{
+        message = `Hai perso! Il risultato è ${risultato} :(`;
+        document.getElementById('message').innerHTML = `<h1 class="text-danger">${message}</h1>`;
+        
+    }
+
+    console.log(message);
+    console.log(pariDispariValue);
+    console.log(userNum);
+    console.log(computerNum);
 }

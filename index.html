@@ -1,4 +1,4 @@
-<html lang="en">    
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -19,13 +19,42 @@
 
 
 <body>
-    
-    <label for="word">Inserisci una parola o frase</label>
-    <input type="text" id="word">
-    <button class="btn btn-danger">Invia</button>
-    <h1 id="result"></h1>
 
-    
+    <div class="container">
+        <section>
+            <div class="d-flex justify-content-center p-5 gap-3 align-items-center">
+                <label for="word">Inserisci una parola o frase</label>
+                <input type="text" id="word">
+                <button class="btn btn-danger text-s">Invia</button>
+            </div>
+
+            <div id="result" class="text-center"></div>
+        </section>
+
+        <section>
+            <h1></h1>
+            <label for="pari-dispari">Scegli un opzione</label>
+            <select name="pari-dispari" id="pari-dispari">
+                <option value="pari">Pari</option>
+                <option value="dispari">Dispari</option>
+            </select>
+
+            <label for="num">Scegli un numero</label>
+            <select name="num" id="num">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <button id="btn-pari-dispari" class="btn btn-danger text-s">Invia</button>
+            <div id="message"></div>
+        </section>
+
+    </div>
+
+
+
     <script type="text/javascript" src="./js/script.js"></script>
     <script type="text/javascript" src="./js/utility.js"></script>
 </body>
