@@ -20,7 +20,7 @@ btnSend.addEventListener('click', palindromo);
 
 //funzione per cercare sela parola è palindroma
 function palindromo() {
-    const word = wordBox.value.split(" ").join("");
+    const word = wordBox.value.toLowerCase().trim().split(" ").join("");
     const wordSplit = word.split("");
     const reverseWord = wordSplit.reverse().join("");
     let message = '';
@@ -29,26 +29,30 @@ function palindromo() {
     console.log(word);
     console.log(reverseWord);
 
-    //condizione che verifica se l'utente ha inserito una parola o una frase
-    if (wordBox.value.includes(" ")) {
-        input = 'frase';
-        console.log("La stringa contiene degli spazi");
+    if (word === '' || !isNaN(word)) {
+        message = 'Il valore inserito è errato'
+        document.getElementById('result').innerHTML = `<h2 class="text-danger">${message}</h2>`;
     } else {
-        input = 'parola';
-        console.log("La stringa non contiene degli spazi");
-    }
+        //condizione che verifica se l'utente ha inserito una parola o una frase
+        if (wordBox.value.trim().includes(" ")) {
+            input = 'frase';
+            console.log("La stringa contiene degli spazi");
+        } else {
+            input = 'parola';
+            console.log("La stringa non contiene degli spazi");
+        }
 
-    //condizione che verifica se parola/frase è palindroma
-    if (word === reverseWord) {
-        message = `${wordBox.value} è una ${input} palindroma`;
-        console.log(true);
-        document.getElementById('result').innerHTML = `<h1 class="text-success">${message}</h1>`;
-    } else {
-        message = `${wordBox.value} non è una ${input} palindroma`;
-        console.log(false);
-        document.getElementById('result').innerHTML = `<h1 class="text-danger">${message}</h1>`;
+        //condizione che verifica se parola/frase è palindroma
+        if (word === reverseWord) {
+            message = `${wordBox.value} è una ${input} palindroma`;
+            console.log(true);
+            document.getElementById('result').innerHTML = `<h2>${message}</h2>`;
+        } else {
+            message = `${wordBox.value} non è una ${input} palindroma`;
+            console.log(false);
+            document.getElementById('result').innerHTML = `<h2 class="text-danger">${message}</h2>`;
+        }
     }
-
     console.log(message)
 }
 
@@ -73,25 +77,32 @@ function pariDispari() {
     let risultato = '';
     let message = '';
 
+
     if (sum % 2) {
         risultato = 'dispari';
         console.log('è dispari');
-    } else{
+    } else {
         risultato = 'pari';
         console.log('è pari');
     }
 
     if (risultato === pariDispariValue) {
         message = `Hai vinto!!! Il risultato è ${risultato} :)`;
-        document.getElementById('message').innerHTML = `<h1 class="text-success">${message}</h1>`;
-    } else{
+        document.getElementById('message').innerHTML = `<h2>${message}</h2>`;
+    } else {
         message = `Hai perso! Il risultato è ${risultato} :(`;
-        document.getElementById('message').innerHTML = `<h1 class="text-danger">${message}</h1>`;
-        
+        document.getElementById('message').innerHTML = `<h2 class="text-danger">${message}</h2>`;
+
     }
 
     console.log(message);
     console.log(pariDispariValue);
     console.log(userNum);
     console.log(computerNum);
+
+    document.getElementById('message').innerHTML += `<p class="text-warning">Hai scelto ${selectPariDispari.value} e ${userNum}</p>
+    <p class="text-warning">Il computer ha scelto ${computerNum}</p>
+    <p class="text-warning">La somma è ${sum}</p>`;
 }
+
+

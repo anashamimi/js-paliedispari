@@ -5,3 +5,40 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+
+:root {
+    --bg-color: #012340;
+    --dark-green: #025939;
+    --green: #027333;
+    --light-green: #03A63C;
+    --contrast-color: #04D939;
+}
+
+body{
+    background-color: var(--bg-color);
+    color: var(--contrast-color);
+}
+
+#palindromo, #play{
+    border: 5px solid var(--dark-green);
+    border-radius: 20px;
+}
+
+#word{
+    color: white;
+    border: 1px solid var(--contrast-color);
+    border-radius: 15px;
+}
+
+h2{
+    color: var(--contrast-color);
+    padding: 25px;
+}
+
+select{
+    background-color: var(--bg-color);
+    color: white;
+    border: 1px solid var(--contrast-color);
+    border-radius: 10px;
+}

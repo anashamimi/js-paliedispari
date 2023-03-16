@@ -21,34 +21,54 @@
 <body>
 
     <div class="container">
-        <section>
-            <div class="d-flex justify-content-center p-5 gap-3 align-items-center">
-                <label for="word">Inserisci una parola o frase</label>
-                <input type="text" id="word">
-                <button class="btn btn-danger text-s">Invia</button>
+
+        <h1 class="text-warning text-center p-5">PALI & DISPARI</h1>
+
+        <section id="palindromo" class="my-3">
+            <h2 class="text-center text-white">IL PALINDROMETRO</h2>
+            <div class="d-flex flex-column justify-content-center p-4 gap-3 align-items-center">
+
+                <div class="d-flex align-items-center justify-content-center">
+                    <label for="word">Inserisci una parola o frase</label>
+                    <input type="text" class="form-control-plaintext px-2" id="word" placeholder="Es: anna">
+                </div>
+
+                <button class="btn btn-success text-s">Invia</button>
             </div>
 
             <div id="result" class="text-center"></div>
         </section>
 
-        <section>
-            <h1></h1>
-            <label for="pari-dispari">Scegli un opzione</label>
-            <select name="pari-dispari" id="pari-dispari">
-                <option value="pari">Pari</option>
-                <option value="dispari">Dispari</option>
-            </select>
+        <section id="play" class="my-3">
 
-            <label for="num">Scegli un numero</label>
-            <select name="num" id="num">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
-            <button id="btn-pari-dispari" class="btn btn-danger text-s">Invia</button>
-            <div id="message"></div>
+            <div class="d-flex flex-column justify-content-center p-4 gap-3 align-items-center">
+                <h2 class="text-center text-white">IL GIOCO DEL PARI E DISPARI</h2>
+
+                <div class="d-flex align-items-center justify-content-center gap-5">
+                    <div>
+                        <label for="pari-dispari">Scegli un opzione</label>
+                        <select name="pari-dispari" id="pari-dispari">
+                            <option value="pari">Pari</option>
+                            <option value="dispari">Dispari</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="num">Scegli un numero</label>
+                        <select name="num" id="num">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button id="btn-pari-dispari" class="btn btn-success text-s">Invia</button>
+                <div id="message"></div>
+            </div>
+
         </section>
 
     </div>
